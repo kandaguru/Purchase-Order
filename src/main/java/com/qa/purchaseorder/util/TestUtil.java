@@ -6,11 +6,15 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.collections4.map.HashedMap;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.jboss.aerogear.security.otp.Totp;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 
 import com.qa.purchaseorder.base.POTestBase;
 import com.qa.purchaseorder.resources.Xls_Reader;
@@ -28,7 +32,11 @@ public class TestUtil extends POTestBase {
 
 	public static String getTwoFA() {
 
-		String otpKeyStr = "UKMKVCOZOELMD5XZO3V72ZHW2CHPECDU"; // <- this 2FA secret key.
+		String otpKeyStr ="UKMKVCOZOELMD5XZO3V72ZHW2CHPECDU";
+				
+	//"UKMKVCOZOELMD5XZO3V72ZHW2CHPECDU"; // <- this 2FA secret key.
+		
+	//"ndg43dwzbgblyj6654eq3cao4r6jegoa"
 
 		Totp totp = new Totp(otpKeyStr);
 		String twoFactorCode = totp.now(); // <- got 2FA coed at this time!
@@ -40,4 +48,20 @@ public class TestUtil extends POTestBase {
 
 	}
 
+	
+	public static boolean isElementPresent(WebDriver driver, By by) {  
+	    
+		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);  
+	    try {  
+	        driver.findElement(by);  
+	        return true;  
+	    } catch (NoSuchElementException e) {  
+	        return false;  
+	    } finally {  
+	        driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIMEOUT, TimeUnit.SECONDS);  
+	    }  
+	}
+	
+	
+	
 }

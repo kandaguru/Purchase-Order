@@ -158,9 +158,8 @@ public class HomePage extends POTestBase {
 	@FindBy(id="uoa-form__moreThanSixFile")
 	WebElement moreThanSixDoc;
 	
-	
-	
-	
+	@FindBy(id="uoa-form__supvApproval")
+	WebElement supervisorDocUpload;
 
 	public void RadioBtn_click(String value) {
 
@@ -479,6 +478,14 @@ public class HomePage extends POTestBase {
 		supplierNotesTxtBox.sendKeys(supplierNotes);
 	}
 
+	public void supervisorDocUpload(String supervisordoc) {
+		
+		supervisorDocUpload.clear();
+		supervisorDocUpload.sendKeys(supervisordoc);
+		
+	}
+	
+	
 	public void selectCheckBox() {
 
 		supressPOChkBox.click();

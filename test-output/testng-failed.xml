@@ -6,7 +6,7 @@
       <class name="com.qa.purchaseorder.testcase.PuchaseOrderTest">
         <methods>
           <include name="setUp"/>
-          <include name="fill_Form_Test" invocation-numbers="0"/>
+          <include name="fill_Form_Test" invocation-numbers="4"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.qa.purchaseorder.testcase.PuchaseOrderTest -->

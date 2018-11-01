@@ -10,15 +10,16 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import org.testng.annotations.AfterMethod;
-
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
-
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.qa.purchaseorder.base.POTestBase;
 import com.qa.purchaseorder.page.HomePage;
 import com.qa.purchaseorder.page.LoginPage;
+import com.qa.purchaseorder.util.TestUtil;
 
 public class PuchaseOrderTest extends POTestBase {
 
@@ -36,6 +37,12 @@ public class PuchaseOrderTest extends POTestBase {
 		loginPage = new LoginPage();
 		loginPage.login();
 		homePage = loginPage.enter2FA();
+
+		while (loginPage.returnErrorMsg()) {
+
+			homePage = loginPage.enter2FA();
+
+		}
 
 	}
 
@@ -112,6 +119,8 @@ public class PuchaseOrderTest extends POTestBase {
 		String splitDetailFileLocValue = (String) map
 				.get("Upload details of the split you require(costCentreSPlitUpload)");
 
+		String supervisorAprovalDocValue = (String) map.get("Upload supervisors approval(supvApproval)");
+
 		/**********************************************
 		 * Logic to handle more than 6 items scenario*
 		 **********************************************/
@@ -138,9 +147,9 @@ public class PuchaseOrderTest extends POTestBase {
 			homePage.enterOnBehalfDetails(); // enter the on-behalf details upon selecting yes in the previous step
 
 		}
-		
+
 		else {
-			
+
 			log.info("*************On behalf module had to be included**************");
 		}
 
@@ -219,18 +228,15 @@ public class PuchaseOrderTest extends POTestBase {
 		}
 
 		else {
-			
-			
+
 			/********************************************************
 			 * Number of Items and Addding the details of each item:* Supplier product code
 			 * * Description * Quantity * Unit price (excl. GST) *
 			 ********************************************************/
 
-		
 			homePage.selectDropDown("item details", numberOfItemsString);
 
 			homePage.itemDetails(numberOfItemsInt, map1, numberOfItemsStringValue, moreThanSixDocLocValue);
-			
 
 			switch (requestToBeChargedValue) {
 
@@ -245,7 +251,7 @@ public class PuchaseOrderTest extends POTestBase {
 				break;
 
 			case "PhD PReSS Account":
-				System.out.println(phdProjectCodeValue);
+
 				homePage.enterCostCentreDetails(requestToBeChargedValue, ccCodeValue, phdProjectCodeValue,
 						phdaccCodeValue + " ", internalUoaProductCodeValue);
 				break;
@@ -259,8 +265,6 @@ public class PuchaseOrderTest extends POTestBase {
 		 *************************/
 
 		homePage.enterdate(dd, mm, yyyy);
-
-		
 
 		/*************************
 		 * Enter Delivery address*
@@ -291,6 +295,11 @@ public class PuchaseOrderTest extends POTestBase {
 		if (!(supplierNotesValue.trim().equals(""))) {
 
 			homePage.enterSupplierNotes(supplierNotesValue);
+		}
+
+		if (!(supervisorAprovalDocValue.trim().equals(""))) {
+
+			homePage.supervisorDocUpload(supervisorAprovalDocValue);
 		}
 
 		homePage.acknowledgeAndSubmit();

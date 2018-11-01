@@ -2,10 +2,13 @@ package com.qa.purchaseorder.page;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qa.purchaseorder.base.POTestBase;
 import com.qa.purchaseorder.util.TestUtil;
@@ -16,7 +19,6 @@ public class LoginPage extends POTestBase {
 		super();
 		PageFactory.initElements(driver, this);
 	}
-	
 
 	@FindBy(id = "username")
 	@CacheLookup
@@ -30,8 +32,12 @@ public class LoginPage extends POTestBase {
 	WebElement signIn;
 
 	@FindBy(id = "token")
-	@CacheLookup
 	WebElement enterTokenTxtBox;
+
+//	@FindBy(xpath = "//p[contains(text(),'not correct')]")
+//	WebElement MFAErrorMsg;
+
+	By MFAErrorMsg=By.className("form-error");
 
 	public void login() throws IOException {
 
@@ -52,6 +58,12 @@ public class LoginPage extends POTestBase {
 		signIn.click();
 
 		return new HomePage();
+	}
+
+	public boolean returnErrorMsg() {
+
+			return TestUtil.isElementPresent(driver, MFAErrorMsg);
+
 	}
 
 }
