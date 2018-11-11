@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -46,7 +47,7 @@ public class PuchaseOrderTest extends POTestBase {
 
 	}
 
-	@Test(dataProvider = "data", retryAnalyzer = com.qa.purchaseorder.retry.RetryAnalyzer.class)
+	@Test(dataProvider = "data")
 	public void fill_Form_Test(Map<Object, Object> map) throws InterruptedException, IOException {
 
 		/*******************************************************
@@ -134,12 +135,13 @@ public class PuchaseOrderTest extends POTestBase {
 
 		else {
 			numberOfItemsStringValue = numberOfItemsString;
-			numberOfItemsInt = 7;
+			numberOfItemsInt = 7; // set a random number more than six
 		}
 
 		/***************************************************************
 		 * Enter the Requester Details * And branch based on the value *
 		 ***************************************************************/
+
 		homePage.RadioBtn_click(onBehalfRdBtnValue);
 
 		if (onBehalfRdBtnValue.equalsIgnoreCase("yes")) {
@@ -172,21 +174,32 @@ public class PuchaseOrderTest extends POTestBase {
 		homePage.selectDropDown("faculty service", facultyServiceValue);
 
 		/*******************************************
-		 * BOC yes or NO Radio Button value * And Branch based on the Value selected *
+		 * BOC yes or NO Radio Button value And Branch based on the Value selected *
 		 *******************************************/
 
-		homePage.RadioBtn_click("Boc" + BocRdBtnValue);
+		try {
+			driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 
-		if (BocRdBtnValue.equalsIgnoreCase("yes")) {
+			homePage.RadioBtn_click("Boc" + BocRdBtnValue);
 
-			homePage.enterBocAccNumber(bocAccNumberValue);
+			if (BocRdBtnValue.equalsIgnoreCase("yes")) {
 
-		}
+				homePage.enterBocAccNumber(bocAccNumberValue);
 
-		else {
+			}
+
+			else {
+
+				homePage.enterSupplierDetails(supplierNameValue, supplierNumberValue);
+
+			}
+		} catch (Exception e) {
 
 			homePage.enterSupplierDetails(supplierNameValue, supplierNumberValue);
 
+		} finally {
+
+			driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT_TIMEOUT, TimeUnit.SECONDS);
 		}
 
 		/******************************************
@@ -200,7 +213,7 @@ public class PuchaseOrderTest extends POTestBase {
 		 *******************************/
 
 		/**************************************
-		 * Enter the Request to be Charged to * Department/Service Division * Research
+		 * Enter the Request to be Charged to ko* Department/Service Division * Research
 		 * Project * PhD Press Account *
 		 **************************************/
 
@@ -217,7 +230,7 @@ public class PuchaseOrderTest extends POTestBase {
 		homePage.RadioBtn_click("splitCC" + splitCCValue);
 
 		/*************************************************
-		 * split this purchase order across cost centres,* account codes or projects? *
+		 * split this purchase order across cost centres, account codes or projects? *
 		 * And branch based on the condition *
 		 *************************************************/
 
@@ -230,8 +243,8 @@ public class PuchaseOrderTest extends POTestBase {
 		else {
 
 			/********************************************************
-			 * Number of Items and Addding the details of each item:* Supplier product code
-			 * * Description * Quantity * Unit price (excl. GST) *
+			 * Number of Items and Adding the details of each item: Supplier product code *
+			 * Description * Quantity * Unit price (excl. GST) *
 			 ********************************************************/
 
 			homePage.selectDropDown("item details", numberOfItemsString);
@@ -289,7 +302,6 @@ public class PuchaseOrderTest extends POTestBase {
 		if (!(additionalDocUploadLocation.trim().equals(""))) {
 
 			homePage.addtionalDocUpload(additionalDocUploadLocation);
-
 		}
 
 		if (!(supplierNotesValue.trim().equals(""))) {
@@ -308,8 +320,10 @@ public class PuchaseOrderTest extends POTestBase {
 
 	@DataProvider
 	public Object[][] data() throws IOException {
+		
+		String path=System.getProperty("user.dir");
 
-		File file = new File("C:\\Users\\kbas663\\Desktop\\TestData\\actual\\testdata (2).xlsx");
+		File file = new File(path+"\\src\\main\\java\\com\\qa\\purchaseorder\\testdata\\ExcelData.xlsx");
 		FileInputStream fis = new FileInputStream(file);
 
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
@@ -317,7 +331,10 @@ public class PuchaseOrderTest extends POTestBase {
 		wb.close();
 
 		int lastRowNum = sheet.getLastRowNum();
+		log.debug("Total number of Rows in TestData File=====>" + lastRowNum);
+
 		int lastCellNum = sheet.getRow(0).getLastCellNum();
+
 		Object[][] obj = new Object[lastRowNum][1];
 
 		for (int i = 0; i < lastRowNum; i++) {
@@ -332,7 +349,7 @@ public class PuchaseOrderTest extends POTestBase {
 		return obj;
 	}
 
-	@AfterMethod
+	//@AfterMethod
 	public void tearDown() {
 
 		driver.quit();

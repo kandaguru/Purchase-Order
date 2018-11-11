@@ -33,10 +33,6 @@ public class TestUtil extends POTestBase {
 	public static String getTwoFA() {
 
 		String otpKeyStr ="UKMKVCOZOELMD5XZO3V72ZHW2CHPECDU";
-				
-	//"UKMKVCOZOELMD5XZO3V72ZHW2CHPECDU"; // <- this 2FA secret key.
-		
-	//"ndg43dwzbgblyj6654eq3cao4r6jegoa"
 
 		Totp totp = new Totp(otpKeyStr);
 		String twoFactorCode = totp.now(); // <- got 2FA coed at this time!
@@ -51,7 +47,7 @@ public class TestUtil extends POTestBase {
 	
 	public static boolean isElementPresent(WebDriver driver, By by) {  
 	    
-		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);  
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);  
 	    try {  
 	        driver.findElement(by);  
 	        return true;  

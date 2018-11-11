@@ -79,11 +79,11 @@ public class POTestBase {
 
 		}
 
-		e_driver = new EventFiringWebDriver(driver);
-		e_listener = new WebEventListener();
-		e_driver.register(e_listener);
-
-		driver = e_driver;
+//		e_driver = new EventFiringWebDriver(driver);
+//		e_listener = new WebEventListener();
+//		e_driver.register(e_listener);
+//
+//		driver = e_driver;
 
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
