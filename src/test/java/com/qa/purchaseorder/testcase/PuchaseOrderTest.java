@@ -349,7 +349,7 @@ public class PuchaseOrderTest extends POTestBase {
 		return obj;
 	}
 
-	//@AfterMethod
+	@AfterMethod
 	public void tearDown() {
 
 		driver.quit();
