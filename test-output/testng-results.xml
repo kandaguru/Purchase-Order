@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="16024" started-at="2018-11-12T04:21:00Z" finished-at="2018-11-12T04:21:16Z">
+  <suite name="Default suite" duration-ms="16990" started-at="2018-11-12T04:45:06Z" finished-at="2018-11-12T04:45:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="16024" started-at="2018-11-12T04:21:00Z" finished-at="2018-11-12T04:21:16Z">
+    <test name="Default test" duration-ms="16990" started-at="2018-11-12T04:45:06Z" finished-at="2018-11-12T04:45:23Z">
       <class name="com.qa.purchaseorder.testcase.PuchaseOrderTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@f5958c9]" name="setUp" is-config="true" duration-ms="10604" started-at="2018-11-12T04:21:01Z" finished-at="2018-11-12T04:21:12Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="setUp" is-config="true" duration-ms="10752" started-at="2018-11-12T04:45:07Z" finished-at="2018-11-12T04:45:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="fill_Form_Test(java.util.Map)[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@f5958c9]" name="fill_Form_Test" duration-ms="4723" started-at="2018-11-12T04:21:12Z" data-provider="data" finished-at="2018-11-12T04:21:16Z">
+        <test-method status="PASS" signature="fill_Form_Test(java.util.Map)[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="fill_Form_Test" duration-ms="4715" started-at="2018-11-12T04:45:18Z" data-provider="data" finished-at="2018-11-12T04:45:23Z">
           <params>
             <param index="0">
               <value>
@@ -22,6 +22,10 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fill_Form_Test -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="tearDown" is-config="true" duration-ms="784" started-at="2018-11-12T04:45:23Z" finished-at="2018-11-12T04:45:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- com.qa.purchaseorder.testcase.PuchaseOrderTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

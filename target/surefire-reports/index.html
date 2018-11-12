@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Suite">
+              <span class="suite-name border-passed">Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Suite">
+                    <span>C:\Users\kbas663\Projects-AUTO\PurchaseOrderProject\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Suite">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">1 method,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.qa.purchaseorder.testcase.PuchaseOrderTest" hash-for-method="fill_Form_Test({Unit price (excl. GST)(lineItemUnitPrice5)= , Email address(emailAddress)= , Description(lineItemDe...)">fill_Form_Test({Unit price (excl. GST)(lineItemUnitPrice5)= , Email address(emailAddress)= , Description(lineItemDe...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.qa.purchaseorder.testcase.PuchaseOrderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="fill_Form_Test({Unit price (excl. GST)(lineItemUnitPrice5)= , Email address(emailAddress)= , Description(lineItemDe...)">
+                  </a> <!-- fill_Form_Test({Unit price (excl. GST)(lineItemUnitPrice5)= , Email address(emailAddress)= , Description(lineItemDe...) -->
+                  <span class="method-name">fill_Form_Test</span>
+                  <span class="parameters">({Unit price (excl. GST)(lineItemUnitPrice5)= , Email address(emailAddress)= , Description(lineItemDescription5)= , First name(givenName)=Sophie, Project code(deptProjCode)= , Quantity(lineItemQuantity4)= , Is the request to be charged to a(requestToBeChargedTo)=Department/Service Division, UPI/Username(uid)=ZAI148, Supplier number(supplierNumber)=0000071089, Upload details of the split you require(costCentreSPlitUpload)= , Cost centre code(costCentre)=1204, Supplier product code(lineItemSupplierPartID5)= , Internal UOA Product Code(internalProductCode)=A7IU, additionalInformation(additionalInformation)= , Select the department, faculty or service division this request is for:(departmentFaculty)=Faculty of Science, Delivery room number(deliveryRoomNumber)=340, Delivery city(deliveryCity)=Auckland, Suppress PO price from supplier?(suppressPoAmount)= , Description(lineItemDescription)=HSB & ANTHRO SIGNAGE & HSB 1 & 2 SIGNAGE C&C day, How many line items are you requesting?(numberOfLineItems)=1, Select the faculty or service division this request is for:(facultyServiceDiv)=Early Childhood Education, First name(fName)= , Unit price (excl. GST)(lineItemUnitPrice6)= , Request-Status=180925-000008, Description(lineItemDescription6)= , Topic Id=1588, Delivery building number(deliveryBuildingNumber)=504, Quantity(lineItemQuantity)=1, Quantity(lineItemQuantity3)= , Supplier product code(lineItemSupplierPartID6)= , Date goods/services are needed(dateNeeded)=31/10/2018, Last name(lName)= , UPI/Username(requestorUpi)= , Supplier product code(lineItemSupplierPartID2)= , The requestor is(isStudent)=Staff, Upload additional documents(Upload1)= , Internal UOA Product Code(internalUoaProductCode1)= , Queue Id=205, Enter any additional notes about the requested split(splitComments)= , Please select one(isStudent)= , Account code(accountCode)=755030, Unit price (excl. GST)(lineItemUnitPrice2)= , FORM_SUBMIT_DATE=03/10/2018 11:43:20, Supplier product code(lineItemSupplierPartID)= , Are you making this request on behalf of someone else? e.g. someone else is the primary contact for this order(onBehalf)=No, Do you want to split this purchase order across cost centres, account codes or projects?(costCentreSplit)=No, Description(lineItemDescription3)= , Additional information(additionalInformation)= , Delivery address line 2(deliveryAddress2)=Auckland Central , Quantity(lineItemQuantity2)= , acknowledgement(acknowledgement)=I acknowledge that this request complies with UoA Procurement Policy, Form Submission PDF(formSubmissionPDF)=, Quantity(lineItemQuantity6)= , Project code(researchProjCode)= , Last name(sn)=Tregonning, Submitter=stre841, Supplier product code(lineItemSupplierPartID3)= , Upload 3(upload3)= , Request currency(requestCurrency)=NZD (New Zealand), Please provide your supervisor's UPI/Username(supervisorUPI)= , Upload 2(upload2)= , Supplier notes(supplierNotes)=testing suppliers notes, Description(lineItemDescription2)= , Project code(phdProjCode)= , Account code(accountCodePress)= , Upload supervisors approval(supvApproval)= , Unit price (excl. GST)(lineItemUnitPrice3)= , Delivery post code(deliveryPostCode)=1010, Unit price (excl. GST)(lineItemUnitPrice4)= , Upload additional documents(upload2)=, Internal UOA Product Code(internalProductCode2)= , Description(lineItemDescription4)= , Upload additional documents for the supplier(Upload1)=, Email address(mail)=s.tregonning@auckland.ac.nz, Upload PhD PReSS account spreadsheet(phdPressAccount)= , Quantity(lineItemQuantity5)= , Please attach a supporting document if there are more than 6 items(moreThanSixFile)= , Supplier product code(lineItemSupplierPartID4)= , Unit price (excl. GST)(lineItemUnitPrice)=214.10, Delivery address line 1(deliveryAddress1)=58 Symond Street, Supplier name(supplierName)=Copy & Print})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+        </div> <!-- panel Suite -->
+        <div panel-name="test-xml-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\kbas663\Projects-AUTO\PurchaseOrderProject\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Suite&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.qa.purchaseorder.testcase.PuchaseOrderTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test --&gt;
+&lt;/suite&gt; &lt;!-- Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Suite');
+function tableData_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(1);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'fill_Form_Test')
+data.setCell(0, 2, 'com.qa.purchaseorder.testcase.PuchaseOrderTest')
+data.setCell(0, 3, 5105);
+window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <div id="times-div-Suite">
+              </div> <!-- times-div-Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.purchaseorder.testcase.PuchaseOrderTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">fill_Form_Test({Unit price (excl. GST)(lineItemUnitPrice5)= , Email address(emailAddress)= , Description(lineItemDe...)</span>
+                <span class="method-start">11010 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">16116 ms</span>
+              </div> <!-- configuration-method after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

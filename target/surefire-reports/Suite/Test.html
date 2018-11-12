@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>TestNG:  Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Nov 12 17:43:48 NZDT 2018</td>
+</tr>
+<tr><td>Total time:</td><td>17 seconds (17692 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.qa.purchaseorder.testcase.PuchaseOrderTest.fill_Form_Test()'><b>fill_Form_Test</b><br>Test class: com.qa.purchaseorder.testcase.PuchaseOrderTest<br>Parameters: {Unit price (excl. GST)(lineItemUnitPrice5)= , Email address(emailAddress)= , Description(lineItemDescription5)= , First name(givenName)=Sophie, Project code(deptProjCode)= , Quantity(lineItemQuantity4)= , Is the request to be charged to a(requestToBeChargedTo)=Department/Service Division, UPI/Username(uid)=ZAI148, Supplier number(supplierNumber)=0000071089, Upload details of the split you require(costCentreSPlitUpload)= , Cost centre code(costCentre)=1204, Supplier product code(lineItemSupplierPartID5)= , Internal UOA Product Code(internalProductCode)=A7IU, additionalInformation(additionalInformation)= , Select the department, faculty or service division this request is for:(departmentFaculty)=Faculty of Science, Delivery room number(deliveryRoomNumber)=340, Delivery city(deliveryCity)=Auckland, Suppress PO price from supplier?(suppressPoAmount)= , Description(lineItemDescription)=HSB & ANTHRO SIGNAGE & HSB 1 & 2 SIGNAGE C&C day, How many line items are you requesting?(numberOfLineItems)=1, Select the faculty or service division this request is for:(facultyServiceDiv)=Early Childhood Education, First name(fName)= , Unit price (excl. GST)(lineItemUnitPrice6)= , Request-Status=180925-000008, Description(lineItemDescription6)= , Topic Id=1588, Delivery building number(deliveryBuildingNumber)=504, Quantity(lineItemQuantity)=1, Quantity(lineItemQuantity3)= , Supplier product code(lineItemSupplierPartID6)= , Date goods/services are needed(dateNeeded)=31/10/2018, Last name(lName)= , UPI/Username(requestorUpi)= , Supplier product code(lineItemSupplierPartID2)= , The requestor is(isStudent)=Staff, Upload additional documents(Upload1)= , Internal UOA Product Code(internalUoaProductCode1)= , Queue Id=205, Enter any additional notes about the requested split(splitComments)= , Please select one(isStudent)= , Account code(accountCode)=755030, Unit price (excl. GST)(lineItemUnitPrice2)= , FORM_SUBMIT_DATE=03/10/2018 11:43:20, Supplier product code(lineItemSupplierPartID)= , Are you making this request on behalf of someone else? e.g. someone else is the primary contact for this order(onBehalf)=No, Do you want to split this purchase order across cost centres, account codes or projects?(costCentreSplit)=No, Description(lineItemDescription3)= , Additional information(additionalInformation)= , Delivery address line 2(deliveryAddress2)=Auckland Central , Quantity(lineItemQuantity2)= , acknowledgement(acknowledgement)=I acknowledge that this request complies with UoA Procurement Policy, Form Submission PDF(formSubmissionPDF)=, Quantity(lineItemQuantity6)= , Project code(researchProjCode)= , Last name(sn)=Tregonning, Submitter=stre841, Supplier product code(lineItemSupplierPartID3)= , Upload 3(upload3)= , Request currency(requestCurrency)=NZD (New Zealand), Please provide your supervisor's UPI/Username(supervisorUPI)= , Upload 2(upload2)= , Supplier notes(supplierNotes)=testing suppliers notes, Description(lineItemDescription2)= , Project code(phdProjCode)= , Account code(accountCodePress)= , Upload supervisors approval(supvApproval)= , Unit price (excl. GST)(lineItemUnitPrice3)= , Delivery post code(deliveryPostCode)=1010, Unit price (excl. GST)(lineItemUnitPrice4)= , Upload additional documents(upload2)=, Internal UOA Product Code(internalProductCode2)= , Description(lineItemDescription4)= , Upload additional documents for the supplier(Upload1)=, Email address(mail)=s.tregonning@auckland.ac.nz, Upload PhD PReSS account spreadsheet(phdPressAccount)= , Quantity(lineItemQuantity5)= , Please attach a supporting document if there are more than 6 items(moreThanSixFile)= , Supplier product code(lineItemSupplierPartID4)= , Unit price (excl. GST)(lineItemUnitPrice)=214.10, Delivery address line 1(deliveryAddress1)=58 Symond Street, Supplier name(supplierName)=Copy & Print}</td>
+<td></td>
+<td>5</td>
+<td>com.qa.purchaseorder.testcase.PuchaseOrderTest@6069db50</td></tr>
+</table><p>
+</body>
+</html>

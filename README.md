@@ -12,7 +12,7 @@ Process
 3. Trigger mvn clean test
 
 
-Please contact if you wish to handle the 2 factor with the script,involves adding og the secret key as part of the code.
-
+Please contact if you wish to handle the 2 factor with the script,involves adding of the secret key as part of the code.
+kindly add the ethernet IP of your machine to the whitelist(contact "Garvit Gor - QA IAM Team") as the page fails to load when login operations are performed recursively.
 
  
