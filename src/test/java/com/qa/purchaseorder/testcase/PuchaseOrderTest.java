@@ -58,7 +58,7 @@ public class PuchaseOrderTest extends POTestBase {
 		Map<Object, Object> map1 = map;
 
 		String onBehalfRdBtnValue = (String) map
-				.get("Are you making this request on behalf of someone else?(onBehalf)");
+				.get("Are you making this request on behalf of someone else? e.g. someone else is the primary contact for this order(onBehalf)");
 		String supervisorUpiValue = (String) map.get("Please provide your supervisor's UPI/Username(supervisorUPI)");
 		String requestorRdBtnValue = (String) map.get("The requestor is(isStudent)");
 
