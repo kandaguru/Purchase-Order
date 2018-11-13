@@ -325,7 +325,7 @@ public class PuchaseOrderTest extends POTestBase {
 		lastPage = homePage.acknowledgeAndSubmit();
 		
 		
-		if(TestUtil.isElementPresent(driver, By.xpath("//div[@class='uoa-form__submit-alert']"))) {
+		if(homePage.isMissingFields()) {
 			
 			System.out.println(
 					"************************************EXECUTION FAILED **************************************"
@@ -337,9 +337,8 @@ public class PuchaseOrderTest extends POTestBase {
 		}
 
 		try {
-			if (lastPage.isDisplayedText() > 0) {
+			if (lastPage.isDisplayedThankyouText() > 0) {
 
-				System.out.println("SIZE ===> " + lastPage.isDisplayedText());
 				lastPage.navigateBack();
 
 			}

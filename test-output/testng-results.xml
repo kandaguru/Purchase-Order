@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="5" ignored="0" total="5" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="29865" started-at="2018-11-13T00:46:45Z" finished-at="2018-11-13T00:47:15Z">
+  <suite name="Default suite" duration-ms="31541" started-at="2018-11-13T00:59:37Z" finished-at="2018-11-13T01:00:08Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="29865" started-at="2018-11-13T00:46:45Z" finished-at="2018-11-13T00:47:15Z">
+    <test name="Default test" duration-ms="31541" started-at="2018-11-13T00:59:37Z" finished-at="2018-11-13T01:00:08Z">
       <class name="com.qa.purchaseorder.testcase.PuchaseOrderTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="setUp" is-config="true" duration-ms="10164" started-at="2018-11-13T00:46:45Z" finished-at="2018-11-13T00:46:56Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="setUp" is-config="true" duration-ms="11333" started-at="2018-11-13T00:59:37Z" finished-at="2018-11-13T00:59:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="fill_Form_Test(java.util.Map)[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="fill_Form_Test" duration-ms="4514" started-at="2018-11-13T00:46:56Z" data-provider="data" finished-at="2018-11-13T00:47:01Z">
+        <test-method status="FAIL" signature="fill_Form_Test(java.util.Map)[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="fill_Form_Test" duration-ms="4716" started-at="2018-11-13T00:59:49Z" data-provider="data" finished-at="2018-11-13T00:59:54Z">
           <params>
             <param index="0">
               <value>
@@ -62,7 +62,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fill_Form_Test -->
-        <test-method status="FAIL" signature="fill_Form_Test(java.util.Map)[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="fill_Form_Test" duration-ms="3453" started-at="2018-11-13T00:47:01Z" data-provider="data" finished-at="2018-11-13T00:47:04Z">
+        <test-method status="FAIL" signature="fill_Form_Test(java.util.Map)[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="fill_Form_Test" duration-ms="3427" started-at="2018-11-13T00:59:54Z" data-provider="data" finished-at="2018-11-13T00:59:57Z">
           <params>
             <param index="0">
               <value>
@@ -113,7 +113,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fill_Form_Test -->
-        <test-method status="FAIL" signature="fill_Form_Test(java.util.Map)[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="fill_Form_Test" duration-ms="3427" started-at="2018-11-13T00:47:04Z" data-provider="data" finished-at="2018-11-13T00:47:08Z">
+        <test-method status="FAIL" signature="fill_Form_Test(java.util.Map)[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="fill_Form_Test" duration-ms="3465" started-at="2018-11-13T00:59:57Z" data-provider="data" finished-at="2018-11-13T01:00:01Z">
           <params>
             <param index="0">
               <value>
@@ -164,7 +164,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fill_Form_Test -->
-        <test-method status="FAIL" signature="fill_Form_Test(java.util.Map)[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="fill_Form_Test" duration-ms="3369" started-at="2018-11-13T00:47:08Z" data-provider="data" finished-at="2018-11-13T00:47:11Z">
+        <test-method status="FAIL" signature="fill_Form_Test(java.util.Map)[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="fill_Form_Test" duration-ms="3469" started-at="2018-11-13T01:00:01Z" data-provider="data" finished-at="2018-11-13T01:00:04Z">
           <params>
             <param index="0">
               <value>
@@ -215,7 +215,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fill_Form_Test -->
-        <test-method status="FAIL" signature="fill_Form_Test(java.util.Map)[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="fill_Form_Test" duration-ms="3356" started-at="2018-11-13T00:47:11Z" data-provider="data" finished-at="2018-11-13T00:47:14Z">
+        <test-method status="FAIL" signature="fill_Form_Test(java.util.Map)[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="fill_Form_Test" duration-ms="3359" started-at="2018-11-13T01:00:04Z" data-provider="data" finished-at="2018-11-13T01:00:08Z">
           <params>
             <param index="0">
               <value>
@@ -266,7 +266,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fill_Form_Test -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="tearDown" is-config="true" duration-ms="805" started-at="2018-11-13T00:47:14Z" finished-at="2018-11-13T00:47:15Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.purchaseorder.testcase.PuchaseOrderTest@233795b6]" name="tearDown" is-config="true" duration-ms="749" started-at="2018-11-13T01:00:08Z" finished-at="2018-11-13T01:00:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

@@ -12,6 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import com.qa.purchaseorder.base.POTestBase;
+import com.qa.purchaseorder.util.TestUtil;
 
 public class HomePage extends POTestBase {
 
@@ -492,6 +493,12 @@ public class HomePage extends POTestBase {
 
 	}
 
+	public boolean isMissingFields() {
+		
+		return TestUtil.isElementPresent(driver, By.xpath("//div[@class='uoa-form__submit-alert']"));
+		
+	}
+	
 	public LastPage acknowledgeAndSubmit() throws IOException {
 
 		acknowledgeChkBox.click();

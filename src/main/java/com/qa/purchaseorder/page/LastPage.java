@@ -22,7 +22,7 @@ public class LastPage extends POTestBase {
 	By thankYouText=By.xpath("//h1[@class='text-center']");
 	By errorText=By.xpath("//[text(),'Error']");
 
-	public int isDisplayedText() {
+	public int isDisplayedThankyouText() {
 		wait= new WebDriverWait(driver, 15);
 		return driver.findElements(thankYouText).size();
 		
