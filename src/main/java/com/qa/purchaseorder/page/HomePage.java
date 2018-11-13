@@ -492,10 +492,11 @@ public class HomePage extends POTestBase {
 
 	}
 
-	public void acknowledgeAndSubmit() {
+	public LastPage acknowledgeAndSubmit() throws IOException {
 
 		acknowledgeChkBox.click();
 		submitBtn.click();
+		return new LastPage();
 
 	}
 	

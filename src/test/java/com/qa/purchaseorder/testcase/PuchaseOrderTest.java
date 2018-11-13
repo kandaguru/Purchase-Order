@@ -9,9 +9,12 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
+import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
@@ -19,6 +22,7 @@ import org.testng.annotations.Test;
 
 import com.qa.purchaseorder.base.POTestBase;
 import com.qa.purchaseorder.page.HomePage;
+import com.qa.purchaseorder.page.LastPage;
 import com.qa.purchaseorder.page.LoginPage;
 import com.qa.purchaseorder.util.TestUtil;
 
@@ -26,12 +30,16 @@ public class PuchaseOrderTest extends POTestBase {
 
 	LoginPage loginPage;
 	HomePage homePage;
+	LastPage lastPage;
+
+	XSSFWorkbook wb;
+	XSSFSheet sheet;
 
 	public PuchaseOrderTest() throws IOException {
 		super();
 	}
 
-	@BeforeMethod
+	@BeforeClass
 	public void setUp() throws IOException {
 
 		intialize();
@@ -57,8 +65,8 @@ public class PuchaseOrderTest extends POTestBase {
 
 		Map<Object, Object> map1 = map;
 
-		String onBehalfRdBtnValue = (String) map
-				.get("Are you making this request on behalf of someone else? e.g. someone else is the primary contact for this order(onBehalf)");
+		String onBehalfRdBtnValue = (String) map.get(
+				"Are you making this request on behalf of someone else? e.g. someone else is the primary contact for this order(onBehalf)");
 		String supervisorUpiValue = (String) map.get("Please provide your supervisor's UPI/Username(supervisorUPI)");
 		String requestorRdBtnValue = (String) map.get("The requestor is(isStudent)");
 
@@ -314,16 +322,39 @@ public class PuchaseOrderTest extends POTestBase {
 			homePage.supervisorDocUpload(supervisorAprovalDocValue);
 		}
 
-		homePage.acknowledgeAndSubmit();
+		lastPage = homePage.acknowledgeAndSubmit();
+		
+		
+		if(TestUtil.isElementPresent(driver, By.xpath("//div[@class='uoa-form__submit-alert']"))) {
+			
+			System.out.println(
+					"************************************EXECUTION FAILED **************************************"
+							+ "\nIncorrect values as part of test data..."
+							+ "\n*******************************************************************************************");
+			Assert.assertEquals(false, true,"Missing/incorrect values provided to the fields in the form");
+			Thread.sleep(5000L);
+			
+		}
 
+		try {
+			if (lastPage.isDisplayedText() > 0) {
+
+				System.out.println("SIZE ===> " + lastPage.isDisplayedText());
+				lastPage.navigateBack();
+
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			
+		}
 	}
 
 	@DataProvider
 	public Object[][] data() throws IOException {
-		
-		String path=System.getProperty("user.dir");
 
-		File file = new File(path+"\\src\\main\\java\\com\\qa\\purchaseorder\\testdata\\ExcelData.xlsx");
+		String path = System.getProperty("user.dir");
+
+		File file = new File(path + "\\src\\main\\java\\com\\qa\\purchaseorder\\testdata\\ExcelData.xlsx");
 		FileInputStream fis = new FileInputStream(file);
 
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
@@ -349,7 +380,7 @@ public class PuchaseOrderTest extends POTestBase {
 		return obj;
 	}
 
-	@AfterMethod
+	@AfterClass
 	public void tearDown() {
 
 		driver.quit();
