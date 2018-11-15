@@ -104,8 +104,8 @@ public class HomePage extends POTestBase {
 
 	@FindBy(id = "uoa-form__splitComments")
 	WebElement splitDetailsTxtBox;
-	
-	@FindBy(id="uoa-form__costCentreSPlitUpload")
+
+	@FindBy(id = "uoa-form__costCentreSPlitUpload")
 	WebElement splitCCFileUpload;
 
 	@FindBy(className = "uoa-form__date-day")
@@ -155,11 +155,11 @@ public class HomePage extends POTestBase {
 
 	@FindBy(id = "uoa-form__accountCodePress")
 	WebElement accountCodePress;
-	
-	@FindBy(id="uoa-form__moreThanSixFile")
+
+	@FindBy(id = "uoa-form__moreThanSixFile")
 	WebElement moreThanSixDoc;
-	
-	@FindBy(id="uoa-form__supvApproval")
+
+	@FindBy(id = "uoa-form__supvApproval")
 	WebElement supervisorDocUpload;
 
 	public void RadioBtn_click(String value) {
@@ -327,7 +327,6 @@ public class HomePage extends POTestBase {
 
 	public void enterCostCentreDetails(String requestChargedTo, String ccCode, String projectcode, String accountCode,
 			String productCode) {
-		
 
 		if (requestChargedTo.equalsIgnoreCase("PhD PReSS Account")) {
 
@@ -357,9 +356,7 @@ public class HomePage extends POTestBase {
 			productCodeTxtBox.sendKeys(productCode);
 
 		}
-		
-		
-		
+
 	}
 
 	public void enterSplitDetails(String splitComments, String splitDetailFile) {
@@ -410,7 +407,7 @@ public class HomePage extends POTestBase {
 
 	}
 
-	public void itemDetails(int count, Map<Object, Object> map1,String moreThanSix,String moreThanSixDocLoc) {
+	public void itemDetails(int count, Map<Object, Object> map1, String moreThanSix, String moreThanSixDocLoc) {
 
 		if (count <= 6) {
 
@@ -446,15 +443,15 @@ public class HomePage extends POTestBase {
 			}
 		}
 
-		else if (moreThanSix.contains("Please attach a supporting document if there are more than 6 items")){
+		else if (moreThanSix.contains("Please attach a supporting document if there are more than 6 items")) {
 
 			moreThanSixDoc.clear();
-			System.out.println("In the itemdetails() ====>"+moreThanSixDocLoc);
+			System.out.println("In the itemdetails() ====>" + moreThanSixDocLoc);
 			moreThanSixDoc.sendKeys(moreThanSixDocLoc);
 		}
-		
+
 		else {
-			
+
 			System.out.println("nothing");
 		}
 
@@ -480,13 +477,12 @@ public class HomePage extends POTestBase {
 	}
 
 	public void supervisorDocUpload(String supervisordoc) {
-		
+
 		supervisorDocUpload.clear();
 		supervisorDocUpload.sendKeys(supervisordoc);
-		
+
 	}
-	
-	
+
 	public void selectCheckBox() {
 
 		supressPOChkBox.click();
@@ -494,11 +490,11 @@ public class HomePage extends POTestBase {
 	}
 
 	public boolean isMissingFields() {
-		
+
 		return TestUtil.isElementPresent(driver, By.xpath("//div[@class='uoa-form__submit-alert']"));
-		
+
 	}
-	
+
 	public LastPage acknowledgeAndSubmit() throws IOException {
 
 		acknowledgeChkBox.click();
@@ -506,6 +502,5 @@ public class HomePage extends POTestBase {
 		return new LastPage();
 
 	}
-	
 
 }

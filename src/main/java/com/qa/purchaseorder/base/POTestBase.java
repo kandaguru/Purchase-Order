@@ -63,7 +63,6 @@ public class POTestBase {
 
 				String path = System.getProperty("user.dir");
 
-				
 				System.setProperty("webdriver.gecko.driver",
 						path + "\\src\\main\\java\\com\\qa\\purchaseorder\\drivers\\geckodriver.exe");
 
@@ -73,7 +72,7 @@ public class POTestBase {
 
 			else if (prop.getProperty("browser").trim().equalsIgnoreCase("IE")) {
 
-				log.error("********IE not supported*********");
+				System.err.println("********IE not supported*********");
 
 			}
 

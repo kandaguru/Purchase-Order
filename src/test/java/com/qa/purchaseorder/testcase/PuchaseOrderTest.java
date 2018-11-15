@@ -147,7 +147,7 @@ public class PuchaseOrderTest extends POTestBase {
 		}
 
 		/***************************************************************
-		 * Enter the Requester Details * And branch based on the value *
+		 * Enter the on behalf Details * And branch based on the value *
 		 ***************************************************************/
 
 		homePage.RadioBtn_click(onBehalfRdBtnValue);
@@ -158,10 +158,6 @@ public class PuchaseOrderTest extends POTestBase {
 
 		}
 
-		else {
-
-			log.info("*************On behalf module had to be included**************");
-		}
 
 		/*************************************
 		 * select the requester radio button *
@@ -324,10 +320,13 @@ public class PuchaseOrderTest extends POTestBase {
 
 		lastPage = homePage.acknowledgeAndSubmit();
 		
+		/*******************************************
+		 *  Handling invalid values or missing values
+		 *********************************************/
 		
 		if(homePage.isMissingFields()) {
 			
-			System.out.println(
+			System.err.println(
 					"************************************EXECUTION FAILED **************************************"
 							+ "\nIncorrect values as part of test data..."
 							+ "\n*******************************************************************************************");
@@ -336,6 +335,10 @@ public class PuchaseOrderTest extends POTestBase {
 			
 		}
 
+		/***********************
+		 * Handling Error Page
+		 ************************/
+		
 		try {
 			if (lastPage.isDisplayedThankyouText() > 0) {
 
@@ -379,6 +382,7 @@ public class PuchaseOrderTest extends POTestBase {
 		return obj;
 	}
 
+	
 	@AfterClass
 	public void tearDown() {
 
